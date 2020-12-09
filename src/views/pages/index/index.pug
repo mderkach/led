@@ -30,3 +30,36 @@ block content
             br
             span.banner__description-lower Суббота. Арена ЦСКА (Тренировочный лед)
         p.banner__header УЧАСТИЕ БЕСПЛАТНОЕ
+  section.rules
+    .rules__clip
+    //- img.rules__clip(src="./assets/img/bg1.png" alt="")
+    +wrapper()
+      .rules__head-wrapper
+        +pic('rules__head-pic', './assets/img/shaiba.png')
+        .rules__head-inner
+          .rules__head-line
+          .rules__head-text-outer
+            .rules__head-text
+              span &nbsp;
+              | принять участие
+              span &nbsp;
+        +pic('rules__head-pic', './assets/img/shaiba.png')
+      h2.rules__h2 ПРАВИЛА И ФОРМАТ
+      .rules__container
+        .rules__team-wrapper
+          p.rules__team-header КОМАНДА
+          img.rules__team-img(src="./assets/img/3+1.png" alt="")
+        .rules__people-wrapper
+          img.rules__people-img(src="./assets/img/man.png" alt="")
+          p.rules__people-header
+            | МУЖЧИНЫ
+            br
+            | ЖЕНЩИНЫ
+            br
+            | 18+
+          img.rules__people-img(src="./assets/img/woman.png" alt="")
+      .rules__details
+        h3.rules__details-header ГРУППОВОЙ ЭТАП:
+        p.rules__details-descr группы по 6 команд. В плей-офф выходит 3 команды.
+        h3.rules__details-header ПЛЕЙ-ОФФ:
+        p.rules__details-descr 48 команд играют в группах по 3 команды. Две выходят в сетку на вылет.
