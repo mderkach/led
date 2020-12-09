@@ -455,3 +455,27 @@ block content
             .teams__block-item
               p.teams__block-item-name Динамо
               p.teams__block-item-descr Москва
+  section.map
+    .map__clip
+    .map__box
+      .map__box-content#map-left(style="height: 100%")
+    .map__box.mirrored
+      .map__box-content#map-right(style="height: 100%")
+    +wrapper()
+      .rules__head-wrapper
+        +pic('rules__head-pic', './assets/img/shaiba.png')
+        .rules__head-inner
+          .rules__head-line
+        +pic('rules__head-pic', './assets/img/shaiba.png')
+      h2.map__h2 Место проведения
+      .banner__description
+        p.banner__description-text
+          span.banner__description-upper 19 ДЕКАБРЯ ОТБОРОЧНЫЙ ЭТАП
+          br
+          span.banner__description-lower Суббота. Ледовый дворец «Центральный»
+        p.banner__description-separator &nbsp;/&nbsp;
+        p.banner__description-text
+          span.banner__description-upper 26 ДЕКАБРЯ ФИНАЛЬНЫЙ ЭТАП
+          br
+          span.banner__description-lower Суббота. Арена ЦСКА (Тренировочный лед)
+      +icon('map-logo banner__logo', 'logo')
