@@ -8,3 +8,25 @@ block variables
   - pageClass = slug + '-page';
 
 block content
+  section.banner
+    +pic('banner__bg', './assets/img/bg-main.jpg')
+    +wrapper()
+      +icon('banner__logo', 'logo')
+      .banner__inner
+        +pic('banner__inner-bg', './assets/img/bg-alt.png')
+        h1.banner__header ПРЕДНОВОГОДНИЙ ТУРНИР ПО ХОККЕЮ 3х3
+        p.banner__subheader призовой фонд
+        strong.banner__price
+          span.inherit 250 000
+          | р
+        .banner__description
+          p.banner__description-text
+            span.banner__description-upper 19 ДЕКАБРЯ ОТБОРОЧНЫЙ ЭТАП
+            br
+            span.banner__description-lower Суббота. Ледовый дворец «Центральный»
+          p.banner__description-separator &nbsp;/&nbsp;
+          p.banner__description-text
+            span.banner__description-upper 26 ДЕКАБРЯ ФИНАЛЬНЫЙ ЭТАП
+            br
+            span.banner__description-lower Суббота. Арена ЦСКА (Тренировочный лед)
+        p.banner__header УЧАСТИЕ БЕСПЛАТНОЕ

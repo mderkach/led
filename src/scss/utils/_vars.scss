@@ -2,24 +2,17 @@
    ========================================================================== */
 
 // Font
-$mainFont: 'Calibri', sans-serif;
+$mainFont: 'DIN', sans-serif;
 $mainFontSize: 16px;
-$mainLineHeight: 1.6;
+$mainLineHeight: 1.35;
 $mainFontWeight: normal;
 $mainFontColor: #000;
 
 //colors
 $white: #fff;
 $black: #000;
-$primary: #152d69;
-$hover: #e3f2fd;
-$gray: #e0e0e0;
-$warning: #f2994a;
-$warning2: #faa61a;
-$success: #6fcf97;
-$sucess2: #0dc143;
-$danger: #eb5757;
-$cyan: #0090a6;
+$primary: #009fe3;
+$accent: #14427a;
 $backdrop: rgba(39, 39, 39, 0.45); // hex #272727 opacity 0.45
 
 // grid
@@ -32,10 +25,12 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
+  xxl: 1200px,
 );
 $container-max-widths: (
   sm: 556px,
   md: 748px,
   lg: 972px,
   xl: 1160px,
+  xxl: 1410px,
 );

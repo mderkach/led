@@ -1,5 +1,4 @@
 @use './_mixins' as *;
 
-@include font-face('Calibri', '../assets/fonts/Calibri');
-@include font-face('Calibri', '../assets/fonts/CalibriLight', 300);
-@include font-face('Calibri', '../assets/fonts/CalibriBold', bold);
+@include font-face('Pepsi', '../assets/fonts/PepsiCyr-Lat');
+@include font-face('DIN', '../assets/fonts/DINCondensed');

@@ -111,7 +111,5 @@
     "webpack-import-glob-loader": "^1.6.3",
     "webpack-merge": "^5.2.0"
   },
-  "dependencies": {
-    "bootstrap": "^4.5.3"
-  }
+  "dependencies": {}
 }
