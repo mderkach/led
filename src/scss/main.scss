@@ -34,37 +34,3 @@ button {
   @include make-container();
   @include make-grid-container-max-widths();
 }
-
-.main {
-  &__container {
-    @include make-grid-container(12, $grid-desktop-gap-col);
-
-    padding: 0 0 rem(28);
-  }
-
-  &__nav {
-    @include make-col-size(3, 1);
-    @include make-grid-container(3, $grid-desktop-gap-col, 0);
-
-    grid-auto-rows: min-content;
-    padding-top: rem(25);
-  }
-
-  &__content {
-    @include make-col-size(9, 1);
-    @include make-grid-container(9, $grid-desktop-gap-col, $grid-desktop-gap-row);
-
-    grid-auto-rows: min-content;
-    padding-top: rem(25);
-  }
-}
-
-.cards {
-  &__wrapper {
-    @include make-col-fluid();
-
-    display: flex;
-    flex-direction: column;
-    row-gap: rem(10);
-  }
-}
