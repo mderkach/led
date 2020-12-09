@@ -1,0 +1,70 @@
+// global uils
+
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+@use './utils/reset' as *;
+@use './utils/fonts' as *;
+@use './utils/typography' as *;
+
+// global rules
+button {
+  padding: 0;
+  background-color: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.is-modal-open {
+  overflow-y: hidden;
+}
+
+.icon {
+  @include size(rem(20));
+
+  fill: #99a2ad;
+
+  &-big {
+    @include size(rem(42));
+  }
+}
+
+.container {
+  @include make-container();
+  @include make-grid-container-max-widths();
+}
+
+.main {
+  &__container {
+    @include make-grid-container(12, $grid-desktop-gap-col);
+
+    padding: 0 0 rem(28);
+  }
+
+  &__nav {
+    @include make-col-size(3, 1);
+    @include make-grid-container(3, $grid-desktop-gap-col, 0);
+
+    grid-auto-rows: min-content;
+    padding-top: rem(25);
+  }
+
+  &__content {
+    @include make-col-size(9, 1);
+    @include make-grid-container(9, $grid-desktop-gap-col, $grid-desktop-gap-row);
+
+    grid-auto-rows: min-content;
+    padding-top: rem(25);
+  }
+}
+
+.cards {
+  &__wrapper {
+    @include make-col-fluid();
+
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+  }
+}

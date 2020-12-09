@@ -1,0 +1,92 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.index {
+  &__container {
+    padding: rem(25) 0 rem(75);
+  }
+
+  &__inner {
+    width: 100%;
+    max-width: rem(420);
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .text-extrasmall {
+      color: $primary;
+    }
+
+    &-progress {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      width: 100%;
+      max-width: rem(250);
+      margin: 0 rem(5);
+      padding: rem(3) rem(10);
+      border-radius: rem(5);
+      background: #f2f2f2;
+
+      .text-extrasmall {
+        z-index: 1;
+
+        &:first-of-type {
+          color: #fff;
+        }
+      }
+
+      &-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: rem(42);
+        height: rem(21);
+        fill: $primary;
+      }
+    }
+  }
+
+  &__logo {
+    @include size(rem(150));
+
+    margin: rem(24) auto rem(32);
+    border-radius: 50%;
+  }
+
+  &__form {
+    &-body {
+      margin-top: rem(14);
+      margin-bottom: rem(32);
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-anchor {
+      @include font-size(14);
+
+      color: #99a2ad;
+      line-height: rem(26);
+      letter-spacing: rem(0.44);
+      text-decoration-line: underline;
+    }
+
+    &-button {
+      max-width: rem(282);
+      margin: 0 auto;
+    }
+  }
+}
