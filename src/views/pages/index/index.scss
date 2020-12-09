@@ -225,6 +225,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: rem(1085);
+    margin: 0 auto;
   }
 
   &__team {
@@ -288,6 +290,105 @@
       font-size: rem(42);
       line-height: 1;
       text-align: center;
+    }
+  }
+
+  &__item {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &:first-child {
+        margin-left: rem(120);
+      }
+
+      &:last-child {
+        margin-right: rem(120);
+      }
+    }
+
+    &-img {
+      width: rem(180);
+      height: rem(110);
+    }
+
+    &-header,
+    &-subheader {
+      font-size: rem(42);
+      text-align: center;
+    }
+
+    &-header {
+      margin-top: rem(12);
+      color: $accent;
+      text-transform: uppercase;
+    }
+
+    &-subheader {
+      color: $white;
+    }
+  }
+
+  &__list {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      max-width: rem(1190);
+      margin: rem(16) auto 0;
+      padding-bottom: rem(75);
+    }
+
+    &-item {
+      position: relative;
+      margin-bottom: rem(10);
+      margin-left: rem(20);
+      color: $white;
+      font-size: rem(24);
+      line-height: rem(29);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: rem(10);
+        left: rem(-20);
+        display: block;
+        width: rem(10);
+        height: rem(10);
+        border-radius: 50%;
+        background-color: $white;
+      }
+    }
+  }
+
+  &__alt {
+    position: relative;
+    margin-top: rem(-60);
+    padding-top: rem(65);
+
+    > .rules {
+      &__clip {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        clip-path: polygon(
+          21% 0,
+          79% 0,
+          81% 4%,
+          100% 0,
+          100% 100%,
+          50% 100%,
+          10% 100%,
+          0 100%,
+          0 0,
+          19% 4%
+        );
+      }
     }
   }
 }
