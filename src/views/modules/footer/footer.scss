@@ -15,6 +15,9 @@
 
   &__container {
     @include make-grid-container(12, 30px);
+    @include media-breakpoint-down(lg) {
+      @include make-grid-container(1, 0, 16px);
+    }
   }
 
   &__cell {
@@ -29,6 +32,10 @@
     }
 
     &:last-child {
+      @include media-breakpoint-down(lg) {
+        align-items: flex-start;
+      }
+
       align-items: flex-end;
     }
   }
@@ -50,6 +57,10 @@
 }
 
 .msport {
+  @include media-breakpoint-down(lg) {
+    margin-left: 0;
+  }
+
   object-fit: contain;
   width: rem(135);
   height: rem(45);

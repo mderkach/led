@@ -33,6 +33,10 @@ button {
 .container {
   @include make-container();
   @include make-grid-container-max-widths();
+  @include media-breakpoint-down(xxl) {
+    padding-right: rem(10);
+    padding-left: rem(10);
+  }
 
   position: relative;
   z-index: 1;
