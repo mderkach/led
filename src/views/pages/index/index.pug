@@ -504,3 +504,14 @@ block content
           span.banner__description-lower Суббота. Арена ЦСКА (Тренировочный лед)
     .map__box-mobile
       .map__box-content#map-right-mobile(style="height: 100%")
+  .modal
+    label.modal__label(for="agree")
+      input(type="checkbox", name="agree", id="agree")
+      .modal__box
+      +icon('modal__check', 'check')
+    p.modal__text
+      | Нажимая на кнопку
+      br
+      | вы даете согласие на
+      br
+      |обработку персональных данных

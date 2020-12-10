@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 // js, scss of components
 import ymaps from 'ymaps';
+import GLightbox from 'glightbox';
 // page styles
+import 'glightbox/dist/css/glightbox.min.css';
 import './index.scss';
 // initialise components and modules
 
@@ -36,3 +38,21 @@ ymaps
     mapRight.behaviors.disable('scrollZoom');
   })
   .catch((error) => console.log('Failed to load Yandex Maps', error));
+
+const lightbox = GLightbox({
+  elements: [
+    {
+      content: document.querySelector('.modal'),
+    },
+  ],
+});
+
+const lightboxTrigger = document.querySelector('.rules__head-text-outer');
+lightboxTrigger.addEventListener('click', () => lightbox.open());
+const checkbox = document.querySelector('input[name=agree]');
+checkbox.addEventListener('change', (e) => {
+  console.log('asd');
+  if (checkbox.checked) {
+    window.open('https://ledkorobka-3x3.timepad.ru/');
+  }
+});
