@@ -1,6 +1,6 @@
 {
-  "name": "Probivon",
-  "short_name": "prob",
+  "name": "Led3x3",
+  "short_name": "3x3",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -8,12 +8,12 @@
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/android-chrome-256x256.png",
+      "sizes": "256x256",
       "type": "image/png"
     }
   ],
-  "theme_color": "#009FE3",
-  "background_color": "#14427A",
+  "theme_color": "#009fe3",
+  "background_color": "#009fe3",
   "display": "standalone"
 }
