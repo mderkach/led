@@ -25,6 +25,10 @@
     width: rem(330);
     height: rem(330);
     margin: 0 auto;
+    @media screen and (max-width: 767.98px) {
+      width: rem(280);
+      height: rem(280);
+    }
   }
 
   &__inner {
@@ -47,34 +51,26 @@
   }
 
   &__header {
-    @include media-breakpoint-down(lg) {
-      @include font-size(45);
-    }
-
     margin-bottom: rem(-18);
     color: $white;
     font-size: rem(50);
     text-align: center;
     text-transform: uppercase;
+    @media screen and (max-width: 1199.98px) {
+      @include font-size(45);
+    }
   }
 
   &__subheader {
-    @include media-breakpoint-down(lg) {
-      @include font-size(32);
-    }
-
     color: $white;
     font-size: rem(42);
     text-align: center;
+    @media screen and (max-width: 1199.98px) {
+      @include font-size(32);
+    }
   }
 
   &__price {
-    @include media-breakpoint-down(lg) {
-      @include font-size(45);
-
-      margin-top: rem(-16);
-    }
-
     display: block;
     width: 100%;
     margin-top: rem(-40);
@@ -84,13 +80,20 @@
     letter-spacing: 0.05em;
     text-align: center;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    @media screen and (max-width: 1199.98px) {
+      @include font-size(45);
+
+      margin-top: rem(-16);
+    }
+    @media screen and (max-width: 767.98px) {
+      margin-top: rem(8) !important;
+    }
 
     .inherit {
-      @include media-breakpoint-down(lg) {
+      font-size: rem(96);
+      @media screen and (max-width: 1199.98px) {
         @include font-size(60);
       }
-
-      font-size: rem(96);
     }
   }
 
@@ -98,47 +101,85 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    @media screen and (max-width: 767.98px) {
+      flex-wrap: wrap;
+    }
 
     &-text {
       color: $white;
 
       &:first-child {
         text-align: right;
+        @media screen and (max-width: 767.98px) {
+          text-align: center;
+        }
       }
 
       &:last-child {
-        text-align-last: left;
+        text-align: left;
+        @media screen and (max-width: 767.98px) {
+          text-align: center;
+        }
+      }
+
+      br {
+        @media screen and (max-width: 767.98px) {
+          display: none;
+        }
       }
     }
 
     &-upper,
     &-separator {
-      @include media-breakpoint-down(lg) {
-        @include font-size(24);
-      }
-
       color: $white;
       font-size: rem(30);
       font-family: 'Pepsi', sans-serif;
       letter-spacing: 0.05em;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(24);
+      }
+      @media screen and (max-width: 767.98px) {
+        text-align: center;
+      }
+    }
+
+    &-separator {
+      @media screen and (max-width: 767.98px) {
+        display: none;
+      }
     }
 
     &-lower {
-      @include media-breakpoint-down(lg) {
-        @include font-size(18);
-      }
-
       display: block;
       margin: rem(4) 0;
       color: $white;
       font-weight: 500;
       font-size: rem(24);
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(18);
+      }
+      @media screen and (max-width: 767.98px) {
+        text-align: center;
+      }
     }
   }
 }
 
 .rules {
   position: relative;
+  @media screen and (max-width: 767.98px) {
+    .rules__head-pic {
+      display: none;
+    }
+
+    .rules__head-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .rules__head-line {
+      display: none;
+    }
+  }
 
   &__clip {
     content: '';
@@ -161,6 +202,21 @@
       0 0,
       19% 4%
     );
+    @media screen and (max-width: 767.98px) {
+      max-height: 100%;
+      clip-path: polygon(
+        10% 0,
+        90% 0,
+        100% 2%,
+        100% 0,
+        100% 100%,
+        50% 100%,
+        10% 100%,
+        0 100%,
+        0 0,
+        0% 2%
+      );
+    }
   }
 
   &__bg {
@@ -170,16 +226,15 @@
 
   &__head {
     &-wrapper {
-      @include media-breakpoint-down(lg) {
-        grid-template-rows: rem(48);
-        grid-template-columns: rem(48) 1fr rem(48);
-      }
-
       display: grid;
       grid-template-rows: rem(60);
       grid-template-columns: rem(64) 1fr rem(64);
       max-width: rem(1170);
       margin: 0 auto;
+      @media screen and (max-width: 1199.98px) {
+        grid-template-rows: rem(48);
+        grid-template-columns: rem(48) 1fr rem(48);
+      }
     }
 
     &-pic {
@@ -196,10 +251,6 @@
     }
 
     &-line {
-      @include media-breakpoint-down(lg) {
-        height: rem(18);
-      }
-
       content: '';
       position: absolute;
       top: 50%;
@@ -210,13 +261,12 @@
       border-radius: rem(25);
       background-color: #e30a18;
       transform: translateY(-50%);
+      @media screen and (max-width: 1199.98px) {
+        height: rem(18);
+      }
     }
 
     &-text {
-      @include media-breakpoint-down(lg) {
-        @include font-size(30);
-      }
-
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -229,6 +279,9 @@
       font-size: rem(42);
       text-align: center;
       text-transform: uppercase;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(30);
+      }
 
       span {
         @include size(rem(16));
@@ -239,10 +292,6 @@
       }
 
       &-outer {
-        @include media-breakpoint-down(lg) {
-          max-width: rem(280);
-        }
-
         position: relative;
         z-index: 2;
         width: 100%;
@@ -253,106 +302,104 @@
         border-radius: rem(4);
         background: #009fe3;
         box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+        @media screen and (max-width: 1199.98px) {
+          max-width: rem(280);
+        }
       }
     }
   }
 
   &__h2 {
-    @include media-breakpoint-down(lg) {
-      @include font-size(30);
-
-      margin: rem(22) auto rem(12);
-    }
-
     margin: rem(44) auto rem(24);
     color: $white;
     font-size: rem(60);
     text-align: center;
     text-transform: uppercase;
+    @media screen and (max-width: 1199.98px) {
+      @include font-size(30);
+
+      margin: rem(22) auto rem(12);
+    }
   }
 
   &__container {
-    @include media-breakpoint-down(lg) {
-      flex-direction: column;
-    }
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: rem(1085);
     margin: 0 auto;
+    @media screen and (max-width: 1199.98px) {
+      flex-direction: column;
+    }
   }
 
   &__team {
     &-wrapper {
-      @include media-breakpoint-down(lg) {
-        margin-bottom: rem(16);
-      }
-
       display: flex;
       flex-direction: column;
       align-items: center;
+      @media screen and (max-width: 1199.98px) {
+        margin-bottom: rem(16);
+      }
     }
 
     &-header {
-      @include media-breakpoint-down(lg) {
-        font-size: rem(25);
-      }
-
       color: $white;
       font-size: rem(50);
       text-align: center;
       text-transform: uppercase;
+      @media screen and (max-width: 1199.98px) {
+        font-size: rem(25);
+      }
     }
 
     &-img {
-      @include media-breakpoint-down(lg) {
+      width: rem(315);
+      height: rem(220);
+      @media screen and (max-width: 1199.98px) {
         width: 100%;
         max-width: rem(280);
         height: auto;
         max-height: rem(220);
       }
-
-      width: rem(315);
-      height: rem(220);
     }
   }
 
   &__people {
     &-wrapper {
-      @include media-breakpoint-down(lg) {
-        margin-bottom: rem(16);
-      }
-
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media screen and (max-width: 1199.98px) {
+        margin-bottom: rem(16);
+      }
+      @media screen and (max-width: 767.98px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     &-header {
-      @include media-breakpoint-down(lg) {
-        margin-bottom: rem(32);
-        font-size: rem(24);
-      }
-
       margin: 0 rem(70);
       color: $white;
       font-size: rem(42);
       line-height: 1;
       text-align: center;
       text-transform: uppercase;
+      @media screen and (max-width: 1199.98px) {
+        margin-bottom: rem(32);
+        font-size: rem(24);
+      }
     }
 
     &-img {
-      @include media-breakpoint-down(lg) {
+      width: rem(140);
+      height: rem(140);
+      @media screen and (max-width: 1199.98px) {
         width: 100%;
         max-width: rem(280);
         height: auto;
-        max-height: rem(220);
       }
-
-      width: rem(140);
-      height: rem(140);
     }
   }
 
@@ -367,77 +414,70 @@
     padding-bottom: rem(70);
 
     &-header {
-      @include media-breakpoint-down(lg) {
-        @include font-size(24);
-      }
-
       color: $white;
       font-size: rem(50);
       text-align: center;
       text-transform: uppercase;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(24);
+      }
     }
 
     &-descr {
-      @include media-breakpoint-down(lg) {
-        @include font-size(18);
-      }
-
       margin-bottom: rem(25);
       color: $white;
       font-size: rem(42);
       line-height: 1;
       text-align: center;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(18);
+      }
     }
   }
 
   &__item {
     &-wrapper {
-      @include media-breakpoint-down(lg) {
-        margin: 0 auto;
-      }
-
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @media screen and (max-width: 1199.98px) {
+        margin: 0 auto;
+      }
 
       &:first-child {
-        @include media-breakpoint-down(lg) {
+        margin-left: rem(120);
+        @media screen and (max-width: 1199.98px) {
           margin: 0 auto;
         }
-
-        margin-left: rem(120);
       }
 
       &:last-child {
-        @include media-breakpoint-down(lg) {
+        margin-right: rem(120);
+        @media screen and (max-width: 1199.98px) {
           margin: 0 auto;
         }
-
-        margin-right: rem(120);
       }
     }
 
     &-img {
-      @include media-breakpoint-down(lg) {
+      width: rem(180);
+      height: rem(110);
+      @media screen and (max-width: 1199.98px) {
         width: 100%;
         max-width: rem(280);
         height: auto;
         max-height: rem(220);
       }
-
-      width: rem(180);
-      height: rem(110);
     }
 
     &-header,
     &-subheader {
-      @include media-breakpoint-down(lg) {
-        @include font-size(18);
-      }
-
       font-size: rem(42);
       text-align: center;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(18);
+      }
     }
 
     &-header {
@@ -452,45 +492,40 @@
   }
 
   &__list {
-    @include media-breakpoint-down(lg) {
+    @media screen and (max-width: 1199.98px) {
       max-width: rem(300);
     }
 
     &-wrapper {
-      @include media-breakpoint-down(lg) {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
       display: flex;
       justify-content: space-between;
       max-width: rem(1190);
       margin: rem(16) auto 0;
       padding-bottom: rem(75);
+      @media screen and (max-width: 1199.98px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @media screen and (max-width: 767.98px) {
+        padding-bottom: 0;
+      }
     }
 
     &-item {
-      @include media-breakpoint-down(lg) {
-        @include font-size(16);
-
-        line-height: rem(20);
-      }
-
       position: relative;
       margin-bottom: rem(10);
       margin-left: rem(20);
       color: $white;
       font-size: rem(24);
       line-height: rem(29);
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(16);
+
+        line-height: rem(20);
+      }
 
       &::before {
-        @include media-breakpoint-down(lg) {
-          top: rem(8);
-          width: rem(5);
-          height: rem(5);
-        }
-
         content: '';
         position: absolute;
         top: rem(10);
@@ -500,6 +535,11 @@
         height: rem(10);
         border-radius: 50%;
         background-color: $white;
+        @media screen and (max-width: 1199.98px) {
+          top: rem(8);
+          width: rem(5);
+          height: rem(5);
+        }
       }
     }
   }
@@ -511,12 +551,25 @@
 
     > .rules {
       &__clip {
-        @include media-breakpoint-down(lg) {
+        background-color: $primary;
+        @media screen and (max-width: 1199.98px) {
           height: 100%;
           max-height: 100%;
         }
-
-        background-color: $primary;
+        @media screen and (max-width: 767.98px) {
+          clip-path: polygon(
+            10% 0,
+            90% 0,
+            100% 2%,
+            100% 0,
+            100% 100%,
+            50% 100%,
+            10% 100%,
+            0 100%,
+            0 0,
+            0% 2%
+          );
+        }
       }
     }
   }
@@ -549,20 +602,37 @@
       0 0,
       19% 4%
     );
+    @media screen and (max-width: 767.98px) {
+      top: unset;
+      max-height: 100%;
+      // clip-path: polygon(
+      //   10% 0,
+      //   90% 0,
+      //   100% 2%,
+      //   100% 0,
+      //   100% 100%,
+      //   50% 100%,
+      //   10% 100%,
+      //   0 100%,
+      //   0 0,
+      //   0% 2%
+      // );
+
+      clip-path: unset;
+    }
   }
 
   &__h2 {
-    @include media-breakpoint-down(lg) {
-      @include font-size(30);
-
-      margin: rem(22) auto rem(12);
-    }
-
     margin: rem(44) auto rem(24);
     color: $accent;
     font-size: rem(60);
     text-align: center;
     text-transform: uppercase;
+    @media screen and (max-width: 1199.98px) {
+      @include font-size(30);
+
+      margin: rem(22) auto rem(12);
+    }
   }
 
   &__block {
@@ -571,6 +641,10 @@
     gap: rem(16);
     padding: 0 rem(20) rem(20);
     border: 3px solid #009fe3;
+    @media screen and (max-width: 767.98px) {
+      grid-template-columns: 1fr;
+      gap: 0 rem(16);
+    }
 
     &-wrapper {
       margin-bottom: rem(40);
@@ -587,26 +661,24 @@
     }
 
     &-subheader {
-      @include media-breakpoint-down(lg) {
-        @include font-size(24);
-      }
-
       grid-column: 1 / -1;
       color: $black;
       font-size: rem(50);
       line-height: 1;
       text-align: center;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(24);
+      }
     }
 
     &-time {
-      @include media-breakpoint-down(lg) {
-        @include font-size(22);
-      }
-
       color: $white;
       font-size: rem(50);
       font-family: 'Pepsi', sans-serif;
       text-align: center;
+      @media screen and (max-width: 1199.98px) {
+        @include font-size(22);
+      }
     }
 
     &-item {
@@ -619,38 +691,38 @@
       border-radius: 0;
 
       &-wrapper {
-        @include media-breakpoint-down(lg) {
-          margin-top: 0;
-        }
-
         display: flex;
         flex-direction: column;
         gap: rem(16);
         margin-top: rem(30);
+        @media screen and (max-width: 1199.98px) {
+          margin-top: 0;
+        }
+        @media screen and (max-width: 767.98px) {
+          margin-top: rem(16);
+        }
       }
 
       &-header {
-        @include media-breakpoint-down(lg) {
-          @include font-size(16);
-        }
-
         color: #333;
         font-size: rem(30);
         line-height: rem(36);
         text-align: center;
+        @media screen and (max-width: 1199.98px) {
+          @include font-size(16);
+        }
       }
 
       &-name {
-        @include media-breakpoint-down(lg) {
-          @include font-size(18);
-
-          line-height: rem(20);
-        }
-
         color: #0b70a5;
         font-size: rem(24);
         line-height: rem(29);
         text-align: center;
+        @media screen and (max-width: 1199.98px) {
+          @include font-size(18);
+
+          line-height: rem(20);
+        }
       }
 
       &-descr {
@@ -667,6 +739,9 @@
   position: relative;
   overflow: hidden;
   padding-bottom: rem(325);
+  @media screen and (max-width: 767.98px) {
+    padding-bottom: 0;
+  }
 
   &__clip {
     content: '';
@@ -688,6 +763,20 @@
       0 0,
       19% 4%
     );
+    @media screen and (max-width: 767.98px) {
+      clip-path: polygon(
+        10% 0,
+        90% 0,
+        100% 2%,
+        100% 0,
+        100% 100%,
+        50% 100%,
+        10% 100%,
+        0 100%,
+        0 0,
+        0% 2%
+      );
+    }
   }
 
   &__h2 {
@@ -695,17 +784,17 @@
       margin-bottom: 0;
       line-height: 1;
     }
-    @include media-breakpoint-down(lg) {
-      @include font-size(30);
-
-      margin: rem(22) auto rem(12);
-    }
 
     margin: 0 auto rem(14);
     color: $white;
     font-size: rem(60);
     text-align: center;
     text-transform: uppercase;
+    @media screen and (max-width: 1199.98px) {
+      @include font-size(30);
+
+      margin: rem(22) auto rem(12);
+    }
   }
 
   &-logo {
@@ -749,6 +838,13 @@
         0 100%
       );
     }
+    @media screen and (max-width: 767.98px) {
+      // position: relative;
+      // width: 100%;
+      // height: rem(320);
+      // clip-path: polygon(0% 0%) !important;
+      display: none;
+    }
 
     &.mirrored {
       right: 0;
@@ -784,6 +880,9 @@
           1% 100%,
           0 100%
         );
+      }
+      @media screen and (max-width: 767.98px) {
+        clip-path: polygon(0% 0%) !important;
       }
     }
   }
