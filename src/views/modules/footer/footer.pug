@@ -1,17 +1,19 @@
 footer.footer
   +wrapper('footer')
     .footer__cell
-      a.footer__text(href="mailto:info@site.ru") Email для связи: info@site.ru
+      a.footer__text(href="mailto:Led3x3@gmail.com") Email для связи: Led3x3@gmail.com
       p.footer__text 2020. Все права защищены. Политика конфеденциальности
     .footer__cell
-      img.msport(src="./assets/img/msport.png")
+      a(href="https://www.instagram.com/moskomsport/" target="_blank")
+        +icon('msport', 'msport')
     .footer__cell
       .footer__socials
         p.footer__text Мы в соц.сетях
-        a(href="#")
+        a(href="https://instagram.com/led3x3?igshid=b6a3xhs4y1lt" target="_blank")
           img(src="./assets/img/ig.png")
-        a(href="#")
+        a(href="https://vk.com/ledkorobka3x3" target="_blank")
           img(src="./assets/img/vk.png")
       p.footer__text
         | Разработка сайта
-        img.softmg(src="./assets/img/smg.png")
+        a(href="https://softmg.ru/" target="_blank")
+          +icon('softmg', 'smg')
