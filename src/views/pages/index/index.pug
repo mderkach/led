@@ -479,3 +479,28 @@ block content
           br
           span.banner__description-lower Суббота. Арена ЦСКА (Тренировочный лед)
       +icon('map-logo banner__logo', 'logo')
+  section.map-mobile
+    .map__clip
+    +wrapper()
+      .rules__head-wrapper
+        +pic('rules__head-pic', './assets/img/shaiba.png')
+        .rules__head-inner
+          .rules__head-line
+        +pic('rules__head-pic', './assets/img/shaiba.png')
+      +icon('map-logo banner__logo', 'logo')
+      h2.map__h2 Место проведения
+      .banner__description
+        p.banner__description-text
+          span.banner__description-upper 19 ДЕКАБРЯ ОТБОРОЧНЫЙ ЭТАП
+          br
+          span.banner__description-lower Суббота. Ледовый дворец «Центральный»
+    .map__box-mobile
+      .map__box-content#map-left-mobile(style="height: 100%")
+    +wrapper()
+      .banner__description
+        p.banner__description-text
+          span.banner__description-upper 26 ДЕКАБРЯ ФИНАЛЬНЫЙ ЭТАП
+          br
+          span.banner__description-lower Суббота. Арена ЦСКА (Тренировочный лед)
+    .map__box-mobile
+      .map__box-content#map-right-mobile(style="height: 100%")
