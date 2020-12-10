@@ -2,6 +2,7 @@
 /* eslint-disable import/extensions */
 // JS
 import './js/svg';
+import './views/pages/index/index';
 // SCSS
 import './scss/main.scss';
 // components

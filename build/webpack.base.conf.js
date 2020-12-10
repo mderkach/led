@@ -25,7 +25,7 @@ const PATHS = {
   build: Path.join(__dirname, '../build'),
   dist: Path.join(__dirname, '../dist'),
   pages: Path.join(__dirname, '../src/views/pages'),
-  assets: './assets/',
+  assets: 'assets/',
 };
 
 // Pages const for HtmlWebpackPlugin
@@ -48,13 +48,13 @@ const MAIN_ENTRY = {
   app: `${PATHS.src}/main.js`,
 };
 
-const DYNAMIC_ENTRY = Glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => {
-  const entry = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
-  acc[entry] = path;
-  return acc;
-}, {});
+// const DYNAMIC_ENTRY = Glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => {
+//   const entry = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+//   acc[entry] = path;
+//   return acc;
+// }, {});
 
-const entryPoints = { ...MAIN_ENTRY, ...DYNAMIC_ENTRY };
+// const entryPoints = { ...MAIN_ENTRY, ...DYNAMIC_ENTRY };
 
 // plugins
 const plugins = [
@@ -64,7 +64,6 @@ const plugins = [
       new HtmlWebpackPlugin({
         template: `${PATHS.pages}/${page.replace(/\.pug/, '')}/${page}`,
         filename: `./${page.replace(/\.pug/, '.html')}`,
-        chunks: ['app', `${page.replace(/\.pug/, '')}`],
       }),
   ),
   // load svg sprite
@@ -98,7 +97,7 @@ module.exports = {
   externals: {
     paths: PATHS,
   },
-  entry: entryPoints,
+  entry: MAIN_ENTRY,
   output: {
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
@@ -175,7 +174,7 @@ module.exports = {
         options: {
           name: 'fonts/[name].[ext]',
           outputPath: `./${PATHS.assets}`,
-          publicPath: isProd() ? '../' : './assets/',
+          publicPath: isProd() ? '../assets' : './assets/',
         },
       },
       {
