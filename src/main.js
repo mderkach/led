@@ -5,5 +5,5 @@ import './js/svg';
 // SCSS
 import './scss/main.scss';
 // components
-
+import Footer from './views/modules/footer/footer';
 // init components

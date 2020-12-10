@@ -1,2 +1,66 @@
 @use 'src/scss/utils/vars' as *;
 @use 'src/scss/utils/mixins' as *;
+
+.footer {
+  padding: rem(30) 0 rem(45);
+  background-color: $primary;
+
+  &__text {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: rem(14);
+    line-height: rem(16);
+  }
+
+  &__container {
+    @include make-grid-container(12, 30px);
+  }
+
+  &__cell {
+    @include make-col-size(4, 1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:nth-child(2) {
+      justify-content: center;
+    }
+
+    &:last-child {
+      align-items: flex-end;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(16);
+
+    a {
+      display: block;
+      margin-left: rem(20);
+
+      img {
+        @include size(rem(36));
+      }
+    }
+  }
+}
+
+.msport {
+  object-fit: contain;
+  width: rem(135);
+  height: rem(45);
+  margin: 0 auto;
+  object-position: center;
+}
+
+.softmg {
+  object-fit: contain;
+  width: rem(140);
+  height: rem(16);
+  margin-left: rem(16);
+  object-position: center;
+}

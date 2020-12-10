@@ -491,6 +491,7 @@
 
 .map {
   position: relative;
+  overflow: hidden;
   padding-bottom: rem(325);
 
   &__clip {
